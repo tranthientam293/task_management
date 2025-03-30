@@ -1,0 +1,13 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'task_management/css/styles.css' %}">
+    <title>{% block title %} Tasks Management {% endblock %}</title>
+  </head>
+  <body>
+    <main>{% block body %} {% endblock%}</main>
+    {% block script %}{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,59 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.swp
+*.swo
+*.bak
+
+# Virtual Environments
+env/
+venv/
+.venv/
+
+# Django
+*.log
+*.pot
+*.py[cod]
+db.sqlite3
+/static/
+/media/
+
+# Environment Variables
+.env
+.env.*
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.vim
+
+# MacOS
+.DS_Store
+
+# Node.js (if using npm/yarn)
+node_modules/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Testing and CI
+.tox/
+.nox/
+*.pytest_cache/
+
+# Sphinx documentation
+docs/_build/
+
+# Migrations
+/*/migrations/*
