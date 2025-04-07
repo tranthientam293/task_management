@@ -16,7 +16,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: var(--black-01);
-  background-color: var(--gray-05);
+  background-color: var(--gray-08);
 }
 
 a {
@@ -34,8 +34,9 @@ button,
 input {
   font: inherit;
   color: inherit;
-  background-color: none;
+  background-color: transparent;
   outline: none;
+  border: none;
 }
 
 button {
