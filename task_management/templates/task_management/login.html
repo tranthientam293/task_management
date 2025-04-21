@@ -1,0 +1,29 @@
+{% extends 'task_management/auth-layout.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+<div class="form-container">
+  <h1 class="title">Login</h1>
+  <form 
+    action="{% url 'login' %}" 
+    method="POST"
+    class="auth-form"
+  >
+    {% csrf_token %}
+    {% if message %}
+      <div>{{message}}</div>
+    {% endif %}
+
+    {{ form }}
+
+    <a class="link" href="">Forgot password?</a>
+
+    <p class="text">
+      If you don't have an account. You can register <a href="{% url 'register' %}">here</a>
+    </p>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+{% endblock %}

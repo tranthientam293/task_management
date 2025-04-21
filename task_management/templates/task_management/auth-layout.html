@@ -1,0 +1,24 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'task_management/css/auth.css' %}" />
+    <title>{% block title %}Authentication{% endblock %}</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="{% url 'index' %}">
+        <img
+          src="{% static 'task_management/assets/img/logo.png' %}"
+          alt="logo"
+          class="logo-icon"
+        />
+      </a>
+    </header>
+    <main class="auth-content">{% block body %}{% endblock %}</main>
+    {% block script %}{% endblock %}
+  </body>
+</html>

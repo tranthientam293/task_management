@@ -61,6 +61,47 @@ header.header {
   border-radius: 50%;
 }
 
+.relative {
+  position: relative;
+
+  &.active {
+    .dropdown {
+      display: block;
+    }
+  }
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: fit-content;
+  min-width: 200px;
+  background-color: var(--white-01);
+  border: 1px solid var(--gray-05);
+  transform: translate(0, 105%);
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+}
+
+.dropdown-item {
+  & > form > button,
+  & > button {
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    text-align: left;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: var(--blue-01);
+      color: var(--white-02);
+    }
+  }
+}
+
 aside.side-bar {
   position: fixed;
   top: 0;
