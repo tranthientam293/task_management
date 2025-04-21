@@ -1,0 +1,26 @@
+{% extends 'task_management/auth-layout.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<div class="form-container">
+  <h1 class="title">Register</h1>
+
+  <form 
+    action="{% url 'register' %}" 
+    method="POST"
+    class="auth-form"
+  >
+    {% csrf_token %}
+    <div>{{message}}</div>
+
+    {{ form }}
+
+    <p class="text">
+      Already have an account? <a href="{% url 'login' %}">Login</a>
+    </p>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+{% endblock %}

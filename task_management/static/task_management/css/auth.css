@@ -1,0 +1,100 @@
+@import url("./_variables.css");
+@import url("./_reset.css");
+@import url("./_auth-layout.css");
+
+.form-container {
+  width: 100%;
+  max-width: 505px;
+  background-color: var(--white-02);
+  margin: 32px auto;
+  padding: 30px;
+  border-radius: 20px;
+
+  .title {
+    margin-bottom: 24px;
+  }
+}
+
+.auth-form {
+  .link {
+    display: block;
+    width: fit-content;
+    font-size: 1.4rem;
+    margin: 8px 0 16px auto;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .text {
+    color: var(--gray-02);
+    margin: 16px 0 24px;
+
+    a {
+      color: var(--blue-01);
+      text-decoration: underline;
+    }
+  }
+
+  button[type="submit"] {
+    display: block;
+    width: 100%;
+    color: var(--white-02);
+    background-color: var(--blue-01);
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-align: center;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.field {
+  margin: 24px 0;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &:has(input:required) {
+    label {
+      &::after {
+        content: "*";
+        position: relative;
+        top: 2px;
+        color: var(--red-01);
+      }
+    }
+  }
+
+  label {
+    display: block;
+    color: var(--gray-02);
+    margin-bottom: 8px;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    padding: 13px 20px;
+    background-color: var(--gray-06);
+    border-radius: 7px;
+  }
+
+  small.help {
+    line-height: 1;
+    color: var(--gray-03);
+  }
+
+  .error {
+    font-size: 1.4rem;
+    color: var(--red-01);
+  }
+}
+
+.non-field-errors {
+  color: var(--red-01);
+}
