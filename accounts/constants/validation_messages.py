@@ -3,5 +3,4 @@ MESSAGES = {
     "username": "This username is already taken",
     "email": "This email is already in use",
     "password_not_match": "Password do not match",
-    "password":"abc"
 }
