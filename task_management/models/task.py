@@ -1,6 +1,6 @@
 from django.db import models
 
-from .user import User
+from accounts.models import User
 
 
 class Task(models.Model):

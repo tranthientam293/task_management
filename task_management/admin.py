@@ -6,11 +6,9 @@ from task_management.models import (
     Task,
     TaskAssignment,
     TaskStatus,
-    User,
 )
 
 # Register your models here.
-admin.site.register(User)
 admin.site.register(Task)
 admin.site.register(Project)
 admin.site.register(ProjectTask)

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'task_management',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -118,9 +119,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'static', # global static files
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = 'task_management.User'
-LOGIN_URL = '/login'
+AUTH_USER_MODEL = 'accounts.User'
+LOGIN_URL = '/auth/login'

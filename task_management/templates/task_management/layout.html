@@ -5,9 +5,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link
       rel="stylesheet"
-      href="{% static 'task_management/css/styles.css' %}"
+      href="{% static 'task_management/css/style.css' %}"
     />
     <title>{% block title %} Tasks Management {% endblock %}</title>
   </head>
@@ -79,7 +80,7 @@
     </header>
     <aside class="side-bar">
       <img
-        src="{% static 'task_management/assets/img/logo.png' %}"
+        src="{% static 'assets/img/logo.png' %}"
         alt="logo"
         class="logo-icon"
       />

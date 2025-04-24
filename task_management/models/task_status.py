@@ -1,6 +1,6 @@
 from django.db import models
 
-from .user import User
+from accounts.models import User
 from .task import Task
 from .status import Status
 

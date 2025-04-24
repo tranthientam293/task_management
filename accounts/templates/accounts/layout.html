@@ -1,18 +1,19 @@
 {% load static %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'task_management/css/auth.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}" />
     <title>{% block title %}Authentication{% endblock %}</title>
   </head>
   <body>
     <header class="header">
       <a href="{% url 'index' %}">
         <img
-          src="{% static 'task_management/assets/img/logo.png' %}"
+          src="{% static 'assets/img/logo.png' %}"
           alt="logo"
           class="logo-icon"
         />
