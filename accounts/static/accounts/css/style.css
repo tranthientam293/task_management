@@ -92,6 +92,12 @@ body {
     }
   }
 
+  &:has(.error) {
+    input {
+      outline: 1px solid var(--red-01);
+    }
+  }
+
   label {
     display: block;
     color: var(--gray-02);
