@@ -1,48 +1,40 @@
-from django.contrib.auth import login, logout
-from django.contrib.auth.views import login_required
+from django.contrib import messages
+from django.contrib.auth import logout
+from django.contrib.auth.views import login_required, LoginView
 from django.shortcuts import redirect, render
 from django.urls import reverse
+from django.views import View
 
 from accounts.forms import LoginForm, RegisterForm
 
 
-def login_view(request):
-    form = LoginForm()
+class RegisterView(View):
+    form_class = RegisterForm
+    initial = {"key": "value"}
+    template_name = "accounts/register.html"
 
-    if request.method == "POST":
-        form = LoginForm(request.POST)
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(initial=self.initial)
+        return render(request, self.template_name, {"form": form})
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
 
         if form.is_valid():
-            login(request, form.user)
-            return redirect(reverse("index"))
+            form.save()
 
-    return render(
-        request,
-        "accounts/login.html",
-        {
-            "form": form,
-        },
-    )
+            messages.success(request, "User created successfully")
+            return redirect(reverse("login"))
+
+        return render(request, self.template_name, {"form": form})
+
+
+class AccountLoginView(LoginView):
+    form_class = LoginForm
+    template_name = "accounts/login.html"
+
 
 @login_required
 def logout_view(request):
     logout(request)
     return redirect(reverse("login"))
-
-
-def register_view(request):
-    form = RegisterForm()
-    if request.method == "POST":
-        form = RegisterForm(request.POST)
-
-        if form.is_valid():
-            form.save()
-            return redirect(reverse("login"))
-    return render(
-        request,
-        "accounts/register.html",
-        {
-            "form": form,
-        },
-    )
-

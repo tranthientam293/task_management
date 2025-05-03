@@ -1,22 +1,19 @@
-from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import forms, get_user_model
 from django.forms.renderers import TemplatesSetting
 
 from accounts.constants import HELP_TEXT, MESSAGES
 
 User = get_user_model()
 
-FORM_TEMPLATE = "accounts/form.html"
 
-
-class RegisterForm(UserCreationForm):
+class RegisterForm(forms.UserCreationForm):
     renderer = TemplatesSetting()
 
     class Meta:
         model = User
-        fields = ("username", "email", "password1", "password2")
+        fields = ["username", "email", "password1", "password2"]
 
-    template_name = FORM_TEMPLATE
+    template_name = "accounts/form.html"
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -8,7 +8,19 @@
       {{ field.label }}
       {{ field.label_suffix }}
     </label>
-    {{ field }}
+    <div class="relative">
+      {{ field }}
+      {% if field.field.widget.input_type == "password" %}
+        <button
+          class="password-btn show"
+          data-id="{{ field.id_for_label }}"
+          type="button"
+        >
+          <ion-icon name="eye-outline" data-toggle="show"></ion-icon>
+          <ion-icon name="eye-off-outline" data-toggle="hide"></ion-icon>
+        </button>
+      {% endif %}
+    </div>
     {% if field.help_text %}
       <small class="help">{{field.help_text}}</small>
     {% endif %}
