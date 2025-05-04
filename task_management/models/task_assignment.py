@@ -1,7 +1,7 @@
 from django.db import models
 
 from .task import Task
-from .user import User
+from accounts.models import User
 
 
 class TaskAssignment(models.Model):

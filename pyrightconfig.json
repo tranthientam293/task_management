@@ -1,7 +1,0 @@
-{
-  "typeCheckingMode": "basic",
-  "reportMissingImports": false,
-  "reportMissingModuleSource": false,
-  "reportAttributeAccessIssue": false,
-  "reportAssignmentType": false
-}

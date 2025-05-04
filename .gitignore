@@ -17,7 +17,7 @@ venv/
 *.pot
 *.py[cod]
 db.sqlite3
-/static/
+# /static/
 /media/
 
 # Environment Variables
